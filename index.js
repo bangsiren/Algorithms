@@ -89,3 +89,14 @@ const oddNums = (n)=> {
 }
 
 console.log('Odd Number ', oddNums(10))
+
+// LINEAR SEARCH 
+const linearSearch = (arr, target)=> {
+   for(let i = 0; i<arr.length; i++) {
+    if(arr[i]===target) {
+      return i;
+     }
+   }
+   return -1
+}
+console.log('LINEAR SEARCH', linearSearch([1,6,2], 2));
