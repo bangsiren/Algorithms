@@ -106,8 +106,8 @@ console.log('LINEAR SEARCH', linearSearch([1, 6, 2], 2));
 let binarySearch = (arr, target) => {
   let leftSide = 0;
   let rightSide = arr.length - 1;
-  let middle = (leftSide + rightSide) / 2
   while (leftSide <= rightSide) {
+    let middle = Math.floor((leftSide + rightSide) / 2)
     if (target === arr[middle]) {
       return middle
     }
@@ -117,8 +117,9 @@ let binarySearch = (arr, target) => {
       leftSide = middle + 1
     }
   }
+  return -1;
 }
 
 console.log('Binary search', binarySearch([-5, 2, 4, 6, 10], 10));
-console.log('Binary search', binarySearch([-10, -1, 3, 5, 7, 14], 7));
+console.log('Binary search', binarySearch([-10, -1, 3, 5, 7, 14], -10));
 console.log('Binary search', binarySearch([-10, -3, 1, 3, 5, 7, 14], 20));
