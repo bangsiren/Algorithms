@@ -119,6 +119,6 @@ let binarySearch = (arr, target) => {
   }
 }
 
-console.log('Binary search', binarySearch([-5, 2, 4, 6, 10], 10))
-console.log('Binary search', binarySearch([-10, -1, 3, 5, 7, 14], 7))
-console.log('Binary search', binarySearch([-10, -3, 1, 3, 5, 7, 14], 7))
+console.log('Binary search', binarySearch([-5, 2, 4, 6, 10], 10));
+console.log('Binary search', binarySearch([-10, -1, 3, 5, 7, 14], 7));
+console.log('Binary search', binarySearch([-10, -3, 1, 3, 5, 7, 14], 20));
