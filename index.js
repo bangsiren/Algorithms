@@ -123,3 +123,23 @@ let binarySearch = (arr, target) => {
 console.log('Binary search', binarySearch([-5, 2, 4, 6, 10], 10));
 console.log('Binary search', binarySearch([-10, -1, 3, 5, 7, 14], -10));
 console.log('Binary search', binarySearch([-10, -3, 1, 3, 5, 7, 14], 20));
+
+
+// == BINARY SEARCH USING RECURSIVE FUNCTION == //
+let binarySearchRecur = (arr, target, l, r) => {
+  let l = 0;
+  let r = arr.length -1;
+  if(l>r){
+    return -1
+  }
+  let middleIndex = Math.floor((l+r)/2);
+  if(arr[middleIndex] === arr) {
+    return middleIndex
+  }
+  if(target< middleIndex){
+    return binarySearchRecur(arr, target, l, middleIndex-1)
+  } else {
+    return binarySearchRecur(arr, target, middleIndex+1, r)
+
+  }
+}
