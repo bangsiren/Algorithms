@@ -152,15 +152,20 @@ console.log('Binary search Recur', binarySearchRecur([-10, -3, 1, 3, 5, 7, 14], 
 // == SORTING ALGORITHMS == //
 
 // == BUBLE SORT == //
-let bubleSort = (arr) => {
-  for (let i = 0; i <= arr.length - 1; i++) {
-
-    if (arr[i] > arr[i + 1]) {
-      let temp = arr[i];
-      arr[i] = arr[i + 1];
-      arr[i + 1] = temp
+function bubleSort(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    console.log('tt')
+    for (let j = 0; j < arr.length - 1-i; j++) {
+    console.log('TT')
+      
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
     }
   }
-
+  return arr
 }
-console.log(binarySearch(20, 10, 1, 100, -10, 10, 2, 20));
+console.log('Buble Sort', bubleSort([20,200,-20,0,.2, 10, 1, 100, -10, 10, 2, 20]));
+
