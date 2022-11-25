@@ -154,10 +154,7 @@ console.log('Binary search Recur', binarySearchRecur([-10, -3, 1, 3, 5, 7, 14], 
 // == BUBLE SORT == //
 function bubleSort(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
-    console.log('tt')
     for (let j = 0; j < arr.length - 1-i; j++) {
-    console.log('TT')
-      
       if (arr[j] > arr[j + 1]) {
         let temp = arr[j];
         arr[j] = arr[j + 1];
