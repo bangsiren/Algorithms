@@ -154,7 +154,7 @@ console.log('Binary search Recur', binarySearchRecur([-10, -3, 1, 3, 5, 7, 14], 
 // == BUBLE SORT == //
 function bubleSort(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = 0; j < arr.length - 1-i; j++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
       if (arr[j] > arr[j + 1]) {
         let temp = arr[j];
         arr[j] = arr[j + 1];
@@ -164,5 +164,28 @@ function bubleSort(arr) {
   }
   return arr
 }
-console.log('Buble Sort', bubleSort([20,200,-20,0,.2, 10, 1, 100, -10, 10, 2, 20]));
+console.log('Buble Sort', bubleSort([20, 200, -20, 0, .2, 10, 1, 100, -10, 10, 2, 20]));
+
+
+// == QUICKSORT == //
+
+
+let quickSort = (arr) => {
+  if (arr.length < 2) {
+    return arr;
+  }
+  let pivot = arr[arr.length - 1];
+  let left = [];
+  let right = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i])
+    }
+  }
+  return [...quickSort(left), pivot, ...quickSort(right)]
+};
+let ar = [8, 20, -2, 4, -6]
+console.log('Quick Sort',quickSort(ar));
 
