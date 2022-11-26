@@ -187,30 +187,46 @@ let quickSort = (arr) => {
   return [...quickSort(left), pivot, ...quickSort(right)]
 };
 let ar = [8, 20, -2, 4, -6]
-console.log('Quick Sort',quickSort(ar));
+console.log('Quick Sort', quickSort(ar));
 
 // ==  MERGE SORT == //
 
-const mergeSort = (arr)=> {
-  if(arr.length<2){
+const mergeSort = (arr) => {
+  if (arr.length < 2) {
     return arr;
   }
-    let mid = Math.floor((arr.length)/2);
-    let leftArr = arr.slice(0, mid);
-    let rightArr = arr.slice(mid);
-    return merge(mergeSort(leftArr), mergeSort(rightArr));
+  let mid = Math.floor((arr.length) / 2);
+  let leftArr = arr.slice(0, mid);
+  let rightArr = arr.slice(mid);
+  return merge(mergeSort(leftArr), mergeSort(rightArr));
 };
 
 let merge = (leftArr, rightArr) => {
   let sortedArr = []
-  while(leftArr.length && rightArr.length) {
-    if(leftArr[0]<=rightArr[0]){
+  while (leftArr.length && rightArr.length) {
+    if (leftArr[0] <= rightArr[0]) {
       sortedArr.push(leftArr.shift())
-    }else {
+    } else {
       sortedArr.push(rightArr.shift())
     }
   }
   return [...sortedArr, ...leftArr, ...rightArr]
 }
 let arr = [8, 20, -2, 4, -6]
-console.log('Merge Sort',mergeSort(arr));
+console.log('Merge Sort', mergeSort(arr));
+
+// == CARTESIAN PRODUCTS == //
+let cartesianProduct = (arr1, arr2) => {
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      result.push([arr1[i], arr2[j]])
+    }
+  }
+  return result
+}
+console.log('CARTESIAN', cartesianProduct([1,2], [5,3,4]));
+
+// == CLIMBING STAIRECASE EITHER ONE OR TWO STEPS AT A TIME   == //
+
+const climbingStairecase = (n) 
