@@ -244,4 +244,4 @@ console.log("CLIMBING STAIRES", climbingStairecase(5))
 console.log("CLIMBING STAIRES", climbingStairecase(5))
 console.log("CLIMBING STAIRES", climbingStairecase(6))
 console.log("CLIMBING STAIRES", climbingStairecase(6))
-
+console.log("CLIMBING STAIRES", climbingStairecase(6))
