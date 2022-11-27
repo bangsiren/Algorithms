@@ -225,8 +225,23 @@ let cartesianProduct = (arr1, arr2) => {
   }
   return result
 }
-console.log('CARTESIAN', cartesianProduct([1,2], [5,3,4]));
+console.log('CARTESIAN', cartesianProduct([1, 2], [5, 3, 4]));
 
 // == CLIMBING STAIRECASE EITHER ONE OR TWO STEPS AT A TIME   == //
 
-const climbingStairecase = (n) 
+const climbingStairecase = (n) => {
+  const noOfWays = [1, 2]
+  for (let i = 2; i <= n; i++) {
+    noOfWays[i] = noOfWays[i - 1] + noOfWays[i - 2]
+  }
+  return noOfWays[n - 1]
+}
+console.log("CLIMBING STAIRES", climbingStairecase(1))
+console.log("CLIMBING STAIRES", climbingStairecase(2))
+console.log("CLIMBING STAIRES", climbingStairecase(3))
+console.log("CLIMBING STAIRES", climbingStairecase(4))
+console.log("CLIMBING STAIRES", climbingStairecase(5))
+console.log("CLIMBING STAIRES", climbingStairecase(5))
+console.log("CLIMBING STAIRES", climbingStairecase(6))
+
+
