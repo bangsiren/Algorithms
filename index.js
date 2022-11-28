@@ -243,3 +243,14 @@ console.log("CLIMBING STAIRES", climbingStairecase(4))
 console.log("CLIMBING STAIRES", climbingStairecase(5))
 console.log("CLIMBING STAIRES", climbingStairecase(5))
 console.log("CLIMBING STAIRES", climbingStairecase(6))
+
+
+// == STACK  == //
+class Stack {
+  constructor() {
+    this.item = [];
+  }
+  push(el) {
+    this.item.push(el)
+  }
+}
