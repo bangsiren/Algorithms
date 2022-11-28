@@ -248,9 +248,84 @@ console.log("CLIMBING STAIRES", climbingStairecase(6))
 // == STACK  == //
 class Stack {
   constructor() {
-    this.item = [];
+    this.items = [];
   }
   push(el) {
-    this.item.push(el)
+    this.items.push(el)
+  }
+  pop(){
+    return this.items.pop()
+  }
+  size() {
+   return this.items.length;
+  }
+  peek() {
+    return this.items[this.items.length -1 ]
+  }
+  isEmpty(){
+    return this.items.length === 0
+  }
+
+  print(){
+    console.log(this.items.toString())
   }
 }
+
+console.log("STACK ")
+const stack = new Stack();
+stack.push(1)
+stack.push(2)
+stack.push(3)
+console.log(stack.size());
+stack.print()
+console.log(stack.pop())
+console.log(stack.peek());
+console.log(stack.isEmpty());
+
+
+// == QUEUE DATA STRUCTURE == //
+
+class Queue {
+
+  constructor() {
+    this.items = [];
+
+  }
+  enqueue(el){
+    this.items.push(el)
+  }
+  dequeue(el){
+    return this.items.shift()
+  }
+  size() {
+    return this.items.length
+  };
+  isEmpty() {
+    return this.items.length ===0
+  }
+  peek() {
+    if(!this.isEmpty()) {
+      return this.items[0]
+    } 
+    return null
+  }
+  print(){
+    console.log(this.items.toString())
+  }
+}
+console.log('QUEUE');
+const queue = new Queue()
+queue.enqueue(20)
+queue.enqueue(30)
+queue.enqueue(40)
+queue.print()
+console.log(queue.isEmpty());
+queue.dequeue();
+queue.print()
+queue.enqueue();
+
+queue.peek();
+console.log(queue.size())
+queue.size();
+
+queue.enqueue()
