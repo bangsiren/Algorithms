@@ -253,20 +253,20 @@ class Stack {
   push(el) {
     this.items.push(el)
   }
-  pop(){
+  pop() {
     return this.items.pop()
   }
   size() {
-   return this.items.length;
+    return this.items.length;
   }
   peek() {
-    return this.items[this.items.length -1 ]
+    return this.items[this.items.length - 1]
   }
-  isEmpty(){
+  isEmpty() {
     return this.items.length === 0
   }
 
-  print(){
+  print() {
     console.log(this.items.toString())
   }
 }
@@ -333,23 +333,23 @@ console.log(stack.isEmpty());
 // == Queue USING AN OBJECT == //
 
 class Queue {
-  constructor(){
+  constructor() {
     this.items = {}
     this.rear = 0;
     this.front = 0;
 
   }
-  enqueue(el){
+  enqueue(el) {
     this.items[this.rear] = el;
     this.rear++
   };
   dequeue() {
     const item = this.items[this.front];
     delete this.items[this.front];
-    this.front ++ 
+    this.front++
     return item;
   };
-  isEmpty(){
+  isEmpty() {
     return this.rear - this.front === 0;
   }
   peek() {
@@ -358,12 +358,12 @@ class Queue {
   size() {
     return this.rear - this.front
   };
-  print(){
+  print() {
     console.log(this.items)
   }
 }
 console.log('SECOND QUEUE')
-const que = new   Queue()
+const que = new Queue()
 console.log(que.isEmpty())
 que.enqueue(40)
 que.enqueue(50)
@@ -374,59 +374,99 @@ console.log(que.dequeue());
 console.log(que.peek());
 
 class CircularQueue {
-  constructor(capacity){
-    this,items = new Array(capacity);
+  constructor(capacity) {
+    this.items = new Array(capacity);
     this.capacity = capacity;
     this.currentLength = 0;
     this.rear = -1;
     this.front = -1;
   };
-  isFull(){
+  isFull() {
     return this.currentLength === this.capacity
   };
-   isEmpty() {
+  isEmpty() {
     return this.currentLength === 0;
-   }
-   enqueue(el){
-    if(!this.isFull()) {
+  }
+  enqueue(ele) {
+    if (!this.isFull()) {
       this.rear = this.rear + 1
-      this.items[this.rear] = el;
+      this.items[this.rear] = ele;
       this.currentLength += 1;
-      if(this.front === -1){
+      if (this.front === -1) {
         this.front = this.rear
       }
     }
-   }
-   dequeue() {
-    if(this.isEmpty()){
+  }
+  dequeue() {
+    if (this.isEmpty()) {
       return null
-    } 
-      const item = this.items[this.front];
-      this.items[this.front] = null;
-      this.front = (this.front+1) % this.capacity;
-      this.currentLength -= 1;
-      if(this.isEmpty()){
-        this.front = -1;
-        this.rear = -1
-      }
-      return item
-   }
+    }
+    const item = this.items[this.front];
+    this.items[this.front] = null;
+    this.front = (this.front + 1) % this.capacity;
+    this.currentLength -= 1;
+    if (this.isEmpty()) {
+      this.front = -1;
+      this.rear = -1
+    }
+    return item
+  }
 
-   peek(){
-    if(!this.isEmpty()) {
+  peek() {
+    if (!this.isEmpty()) {
       return this.itemS[this.front]
     }
     return null
-   }
-   print(){
-    if(this.isEmpty()){
+  }
+  print() {
+    if (this.isEmpty()) {
       console.log('Queue is empty');
     } else {
-      let i;
-      let str;
-      for(i= this.front; i !== this.rear; i =(1+i)% this.capacity) {
-str += this.item[i] + " "
+      let i
+      let str = ''
+      for (i = this.front; i !== this.rear; i = (i + 1) % this.capacity) {
+        str += this.items[i] + " "
       }
+      str += this.items[i]
+      console.log(str)
     }
-   }
+  }
 }
+console.log('CIRCULAR QUEUE');
+const circularQue = new CircularQueue(10);
+console.log(circularQue.isEmpty());
+circularQue.enqueue(10)
+circularQue.enqueue(20)
+circularQue.enqueue(30)
+
+console.log(circularQue.isFull());
+circularQue.print()
+
+
+
+// == linked List Data Stucture == // 
+class Node {
+  constructor(value){
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor(){
+    this.head = null,
+    this.size = 0
+  }
+  isEmpty(){
+    return this.size === 0;
+  };
+  getSize(){
+    return this.size;
+  }
+}
+
+
+const list = new LinkedList();
+console.log('LINKED LIST')
+console.log('List is empty:', list.isEmpty())
+console.log('List Size:', list.getSize());
