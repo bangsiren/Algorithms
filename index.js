@@ -412,5 +412,21 @@ class CircularQueue {
       return item
    }
 
-   
+   peek(){
+    if(!this.isEmpty()) {
+      return this.itemS[this.front]
+    }
+    return null
+   }
+   print(){
+    if(this.isEmpty()){
+      console.log('Queue is empty');
+    } else {
+      let i;
+      let str;
+      for(i= this.front; i !== this.rear; i =(1+i)% this.capacity) {
+str += this.item[i] + " "
+      }
+    }
+   }
 }
