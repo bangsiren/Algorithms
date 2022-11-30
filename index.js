@@ -364,3 +364,10 @@ class Queue {
 console.log('SECOND QUEUE')
 const que = new   Queue()
 console.log(que.isEmpty())
+que.enqueue(40)
+que.enqueue(50)
+que.enqueue(60)
+que.enqueue(70)
+console.log(que.print())
+console.log(que.dequeue());
+console.log(que.peek())
