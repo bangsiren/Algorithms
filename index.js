@@ -446,27 +446,58 @@ circularQue.print()
 
 // == linked List Data Stucture == // 
 class Node {
-  constructor(value){
+  constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
 
 class LinkedList {
-  constructor(){
+  constructor() {
     this.head = null,
-    this.size = 0
+      this.size = 0
   }
-  isEmpty(){
+  isEmpty() {
     return this.size === 0;
   };
-  getSize(){
+  getSize() {
     return this.size;
+  }
+  prepend(val) {
+    const node = new Node(val);
+    if (this.isEmpty()) {
+      this.head = node
+    } else {
+      node.next = this.head
+      this.head = node
+    }
+    this.size++
+  }
+  print() {
+    if (this.isEmpty()) {
+      console.log('List is empty')
+    } else {
+      let curr = this.head;
+      let listValues = ''
+      while (curr) {
+        listValues += `${curr.val} `
+        curr = curr.next
+      }
+      console.log(listValues)
+    }
   }
 }
 
 
 const list = new LinkedList();
 console.log('LINKED LIST')
-console.log('List is empty:', list.isEmpty())
+console.log('List is empty?', list.isEmpty())
 console.log('List Size:', list.getSize());
+list.print()
+list.prepend(100)
+list.print()
+list.prepend(200)
+list.print()
+list.prepend(300)
+list.print()
+
