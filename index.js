@@ -283,7 +283,7 @@ console.log(stack.peek());
 console.log(stack.isEmpty());
 
 
-// == QUEUE DATA STRUCTURE == //
+// == QUEUE DATA STRUCTURE USING AN ARREY== //
 
 // class Queue {
 
@@ -330,6 +330,7 @@ console.log(stack.isEmpty());
 
 // queue.enqueue()
 
+// == Queue USING AN OBJECT == //
 
 class Queue {
   constructor(){
@@ -370,4 +371,46 @@ que.enqueue(60)
 que.enqueue(70)
 console.log(que.print())
 console.log(que.dequeue());
-console.log(que.peek())
+console.log(que.peek());
+
+class CircularQueue {
+  constructor(capacity){
+    this,items = new Array(capacity);
+    this.capacity = capacity;
+    this.currentLength = 0;
+    this.rear = -1;
+    this.front = -1;
+  };
+  isFull(){
+    return this.currentLength === this.capacity
+  };
+   isEmpty() {
+    return this.currentLength === 0;
+   }
+   enqueue(el){
+    if(!this.isFull()) {
+      this.rear = this.rear + 1
+      this.items[this.rear] = el;
+      this.currentLength += 1;
+      if(this.front === -1){
+        this.front = this.rear
+      }
+    }
+   }
+   dequeue() {
+    if(this.isEmpty()){
+      return null
+    } 
+      const item = this.items[this.front];
+      this.items[this.front] = null;
+      this.front = (this.front+1) % this.capacity;
+      this.currentLength -= 1;
+      if(this.isEmpty()){
+        this.front = -1;
+        this.rear = -1
+      }
+      return item
+   }
+
+   
+}
