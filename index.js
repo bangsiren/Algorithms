@@ -329,3 +329,38 @@ console.log(queue.size())
 queue.size();
 
 queue.enqueue()
+
+
+class Queue {
+  constructor(){
+    this.items = []
+    this.rear = 0;
+    this.front = 0;
+
+  }
+  enqueue(el){
+    this.items[this.rear] = el;
+    this.rear++
+  };
+  dequeue() {
+    const item = this.items[this.front];
+    delete this.items[this.front];
+    this.front ++ 
+    return item;
+  };
+  isEmpty(){
+    return this.rear - this.front === 0;
+  }
+  peek() {
+    return this.items[this.front]
+  }
+  size() {
+    return this.rear - this.front
+  };
+  print(){
+    console.log(this.items)
+  }
+}
+console.log('SECOND QUEUE')
+const que = new   Queue()
+console.log(que.isEmpty())
