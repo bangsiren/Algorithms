@@ -473,6 +473,20 @@ class LinkedList {
     }
     this.size++
   }
+append(value) {
+  const node = new Node(val);
+  if(this,this.isEmpty()) {
+    this.head = node
+  } else {
+    let prev = this.head
+    while(prev.next) {
+         prev = prev.next
+    }
+    prev.next = node
+  }
+  this.size++
+}
+
   print() {
     if (this.isEmpty()) {
       console.log('List is empty')
@@ -480,7 +494,7 @@ class LinkedList {
       let curr = this.head;
       let listValues = ''
       while (curr) {
-        listValues += `${curr.val} `
+        listValues += `${curr.value} `
         curr = curr.next
       }
       console.log(listValues)
