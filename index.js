@@ -474,7 +474,7 @@ class LinkedList {
     this.size++
   }
   append(value) {
-    const node = new Node(val);
+    const node = new Node(value);
     if (this, this.isEmpty()) {
       this.head = node
     } else {
@@ -508,10 +508,10 @@ console.log('LINKED LIST')
 console.log('List is empty?', list.isEmpty())
 console.log('List Size:', list.getSize());
 list.print()
-list.prepend(100)
+list.append(100)
 list.print()
-list.prepend(200)
+list.append(200)
 list.print()
-list.prepend(300)
+list.append(300)
 list.print()
 
